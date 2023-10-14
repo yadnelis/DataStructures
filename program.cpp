@@ -15,5 +15,8 @@ int main()
     list.print();
     std::cout << "\n" << list.first();
     std::cout << "\n" << list.last();
+
+    int s;
+    std::cin >> s; 
 } 
 
