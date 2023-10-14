@@ -5,6 +5,4 @@ struct node
    public:
    int data;
    node* link;
-}; 
-
- 
+};
