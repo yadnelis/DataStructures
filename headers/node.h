@@ -1,8 +1,9 @@
 #pragma once
 
+template <class T>
 struct node
 {
    public:
-   int data;
+   T data;
    node* link;
 };
