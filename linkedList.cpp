@@ -1,11 +1,11 @@
-#include <iostream>
-#include "linkedList.h"
+/*#include <iostream>
 #include <string>
 #include <sstream>
 
-std::ostream& operator<<(std::ostream &os, const linkedList &list)
+template <class T>
+std::ostream& operator<<(std::ostream &os, const linkedList<T> &list)
 {
-   node<int> *current = list.head;
+   node<T> *current = list.head;
    os << list.head << "-> ";
    os << "Lenght: " << list.lenght << " [" << "\n";
    while (current != nullptr)
@@ -17,17 +17,18 @@ std::ostream& operator<<(std::ostream &os, const linkedList &list)
    return os;
 }
 
-linkedList::linkedList()
+template <class T>
+linkedList<T>::linkedList()
 {
    this->head = nullptr;
    this->tail = nullptr;
    this->lenght = 0;
 }
-
-linkedList::~linkedList()
+template <class T>
+linkedList<T>::~linkedList()
 {
-   node<int> *current = this->head;
-   node<int> *post = nullptr;
+   node<T> *current = this->head;
+   node<T> *post = nullptr;
 
    while (current != nullptr)
    {
@@ -37,12 +38,12 @@ linkedList::~linkedList()
       current = post;
    }
 }
-
-linkedList& linkedList::insert(const int& data)
+template <class T>
+linkedList<T>& linkedList<T>::insert(const T& data)
 {
-   node<int> *current = nullptr;
+   node<T> *current = nullptr;
    if (this->tail == nullptr) this->tail = this->head;
-   current = new node<int>;
+   current = new node<T>;
    current->data = data;
    current->link = this->head;
    this->head = current;
@@ -50,10 +51,11 @@ linkedList& linkedList::insert(const int& data)
    return *this;
 }
 
-linkedList& linkedList::remove(const int& data)
+template <class T>
+linkedList<T>& linkedList<T>::remove(const T& data)
 {
-   node<int> *current = this->head;
-   node<int> *pre = nullptr;
+   node<T> *current = this->head;
+   node<T> *pre = nullptr;
 
    //Iterate trough the list until you find the element.
    //There is no need to keep iterating trough the list once the element is found. 
@@ -89,15 +91,16 @@ linkedList& linkedList::remove(const int& data)
    this->lenght--;
    return *this;
 }
-
-int linkedList::first() const
+template <class T>
+T linkedList<T>::first() const
 {
    return head->data;
 }
 
-int linkedList::last() const
+template <class T>
+T linkedList<T>::last() const
 {
-   node<int> *current = this->head;
+   node<T> *current = this->head;
    while (current->link != nullptr)
    {
       current = current->link;
@@ -105,15 +108,15 @@ int linkedList::last() const
    return this->tail->data;
    return (current->data);
 }
- 
-bool linkedList::isEmpty() const
+ template <class T>
+bool linkedList<T>::isEmpty() const
 {
    return head == nullptr;
 }
-
-bool linkedList::contains(const int &data) const 
+template <class T>
+bool linkedList<T>::contains(const T &data) const 
 {
-   node<int> *current = this->head;
+   node<T> *current = this->head;
    while (current != nullptr)
    {
       if (data == current->data)
@@ -125,3 +128,4 @@ bool linkedList::contains(const int &data) const
 
 
 
+*/
