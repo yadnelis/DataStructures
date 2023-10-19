@@ -24,8 +24,10 @@ int main()
     std::cout << "First: " << list.first() << "\n";
     std::cout << "Last:" << list.last() << "\n";
 
-    list.remove(2);
-    std::cout << list;
+    list.remove(5);
+    std::cout << list << "\n";
+    std::cout << list.contains(5) << "\n";
+    std::cout << list.contains(2) << "\n";
 
     return 0;
 } 
